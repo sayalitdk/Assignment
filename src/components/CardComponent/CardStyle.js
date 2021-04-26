@@ -28,6 +28,10 @@ export const CardWrapper = styled.div`
     align-items: center;
     justify-content: space-between;
   }
+  .card-body {
+    display: flex;
+    justify-content: space-between;
+  }
 `;
 
 export default CardWrapper;

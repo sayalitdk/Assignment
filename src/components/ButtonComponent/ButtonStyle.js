@@ -18,6 +18,12 @@ const ButtonWrapper = styled.div`
     align-items: center;
     justify-content: space-between;
   }
+  .fulldetails {
+    margin-top: 70%;
+    border: none;
+    background-color: white;
+    margin-top: 70%;
+  }
 `;
 
 export default ButtonWrapper;

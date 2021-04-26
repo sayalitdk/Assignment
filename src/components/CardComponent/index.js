@@ -4,9 +4,12 @@ import { CardWrapper } from "./CardStyle";
 import { Card } from "react-bootstrap";
 import CardHeaderComponent from "../CardHeaderComponent";
 import SingleRowTable from "../TableComponent";
+import CardButtonComponent from "../ButtonComponent";
 
 const CardComponent = () => {
   const cardData = useContext(DataContext);
+  const linkDetailsClicked = () =>
+    console.log("linkDetailsClicked function called");
   return cardData.map((data, index) => {
     return (
       <CardWrapper key={index}>
@@ -27,6 +30,10 @@ const CardComponent = () => {
                 "Category",
                 "Request Status",
               ]}
+            />
+            <CardButtonComponent
+              handleClick={linkDetailsClicked}
+              text="Full details"
             />
           </Card.Body>
         </Card>
