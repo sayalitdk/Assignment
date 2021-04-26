@@ -1,14 +1,14 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import { action } from "@storybook/addon-actions";
+import CardData from "../contexts/CardData";
 
 import CardHeader from "../components/CardHeaderComponent";
 
 storiesOf("CardHeader", module).add("Header", () => (
   <CardHeader
-    amount={1000.6789658}
-    accountNo={3254353498654646}
-    accountName={"ABC Company"}
-    reqName={"Cancel / recall payment"}
+    amount={CardData[0].amount}
+    accountNo={CardData[0].accountNo}
+    accountName={CardData[0].accountName}
+    reqName={CardData[0].reqName}
   />
 ));
