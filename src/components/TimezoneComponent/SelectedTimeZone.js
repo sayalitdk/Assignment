@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import SingleRowTable from "../TableComponent/SingleRowTable";
+import SingleRowTable from "../TableComponent";
 import { formatTime } from "../../utils/format";
 
 const SelectedTimeZone = ({ record, recordError, recordStatus }) => {

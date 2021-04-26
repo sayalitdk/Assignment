@@ -29,20 +29,22 @@ const AddNumbers = () => {
   };
   return (
     <AddNumberWrapper>
-      <div class="text-center">
+      <div className="text-center">
         {error && <div className="errorMsg">{error}</div>}
-        <InputBox
-          className="numInput"
-          typeValue="number"
-          inputValue={num1}
-          handleClick={(value) => setNum1(value)}
-        />
-        <InputBox
-          typeValue="number"
-          className="numInput"
-          inputValue={num2}
-          handleClick={(value) => setNum2(value)}
-        />
+        <div className="numInputDiv">
+          <InputBox
+            className="numInput"
+            typeValue="number"
+            inputValue={num1}
+            handleClick={(value) => setNum1(value)}
+          />
+          <InputBox
+            typeValue="number"
+            className="numInput"
+            inputValue={num2}
+            handleClick={(value) => setNum2(value)}
+          />
+        </div>
         <CardButtonComponent handleClick={handleClick} text="Add" />
         <div className="resultCls">
           {result && "Sum of the number is: " + result}

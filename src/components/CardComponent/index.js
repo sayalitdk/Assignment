@@ -2,8 +2,8 @@ import { useContext } from "react";
 import { DataContext } from "../../contexts/DataContext";
 import { CardWrapper } from "./CardStyle";
 import { Card } from "react-bootstrap";
-import CardHeaderComponent from "./CardHeaderComponent";
-import SingleRowTable from "../TableComponent/SingleRowTable";
+import CardHeaderComponent from "../CardHeaderComponent";
+import SingleRowTable from "../TableComponent";
 
 const CardComponent = () => {
   const cardData = useContext(DataContext);

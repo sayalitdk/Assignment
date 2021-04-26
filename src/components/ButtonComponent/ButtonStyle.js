@@ -13,6 +13,11 @@ const ButtonWrapper = styled.div`
     background-color: #463a3ab8;
     border-color: #463a3ab8;
   }
+  .add {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 `;
 
 export default ButtonWrapper;

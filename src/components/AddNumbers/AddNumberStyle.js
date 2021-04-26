@@ -10,15 +10,19 @@ const AddNumberWrapper = styled.div`
   }
   .numInput {
     width: 30%;
-    margin: 8% 4% 0% 0%;
+    margin: 8% 4% 4% 4%;
   }
   .add {
-    margin: 8% 0% 2% 0%;
     width: 40%;
   }
   .resultCls {
     margin: 3% 0% 8%;
     font-size: larger;
+  }
+  .numInputDiv {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 `;
 

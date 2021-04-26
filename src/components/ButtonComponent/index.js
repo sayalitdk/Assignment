@@ -2,7 +2,7 @@ import { Button } from "react-bootstrap";
 import ButtonWrapper from "./ButtonStyle";
 
 const CardButtonComponent = ({ handleClick, text }) => (
-  <ButtonWrapper className="pull-right">
+  <ButtonWrapper>
     <Button
       className={text.replaceAll(" ", "").toLowerCase()}
       onClick={handleClick}
