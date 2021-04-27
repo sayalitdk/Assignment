@@ -10,7 +10,7 @@ import { BrowserRouter, Link, Route, Switch } from "react-router-dom";
 function App() {
   return (
     <BrowserRouter>
-      <nav>
+      <nav data-testid="navbar">
         <ul>
           <li>
             <Link to="/card" data-testid="card-link">

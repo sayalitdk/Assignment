@@ -13,7 +13,7 @@ const CardComponent = () => {
   return cardData.map((data, index) => {
     return (
       <CardWrapper key={index}>
-        <Card>
+        <Card data-testid={"cardCmp" + index}>
           <Card.Header>
             <CardHeaderComponent
               amount={data.amount}

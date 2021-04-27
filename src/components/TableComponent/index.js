@@ -3,7 +3,7 @@ import { SingleRowWrapper } from "./SingleRowStyle";
 const SingleRowTable = (props) => {
   return (
     <SingleRowWrapper>
-      <table>
+      <table data-testid="tableComponent">
         <thead>
           <tr>
             {props.reqHeaderData.map((headerData, index) => {

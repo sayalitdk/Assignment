@@ -32,13 +32,14 @@ const AddNumbers = () => {
       <div className="text-center">
         <div className="numInputDiv" data-testid="inputDiv">
           <InputBox
-            data-testid="num1"
+            id="num1"
             className="numInput"
             typeValue="number"
             inputValue={num1}
             handleClick={(value) => setNum1(value)}
           />
           <InputBox
+            id="num2"
             typeValue="number"
             className="numInput"
             inputValue={num2}

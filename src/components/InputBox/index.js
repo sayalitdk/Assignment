@@ -1,5 +1,6 @@
-const InputBox = ({ handleClick, typeValue, inputValue, className }) => (
+const InputBox = ({ handleClick, typeValue, inputValue, className, id }) => (
   <input
+    data-testid={id}
     className={className}
     type={typeValue}
     value={inputValue}
