@@ -30,6 +30,7 @@ const AddNumbers = () => {
   return (
     <AddNumberWrapper>
       <div className="text-center">
+        {error && <div className="errorMsg">{error}</div>}
         <div className="numInputDiv" data-testid="inputDiv">
           <InputBox
             id="num1"
