@@ -34,6 +34,7 @@ const CardComponent = () => {
             <CardButtonComponent
               handleClick={linkDetailsClicked}
               text="Full details"
+              btnClsName="fulldetails"
             />
           </Card.Body>
         </Card>

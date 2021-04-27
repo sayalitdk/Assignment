@@ -30,9 +30,9 @@ const AddNumbers = () => {
   return (
     <AddNumberWrapper>
       <div className="text-center">
-        {error && <div className="errorMsg">{error}</div>}
-        <div className="numInputDiv">
+        <div className="numInputDiv" data-testid="inputDiv">
           <InputBox
+            data-testid="num1"
             className="numInput"
             typeValue="number"
             inputValue={num1}
@@ -45,7 +45,12 @@ const AddNumbers = () => {
             handleClick={(value) => setNum2(value)}
           />
         </div>
-        <CardButtonComponent handleClick={handleClick} text="Add" />
+        <CardButtonComponent
+          handleClick={handleClick}
+          text="Add"
+          btnClsName="add"
+          data-testid="addBtn"
+        />
         <div className="resultCls">
           {result && "Sum of the number is: " + result}
         </div>

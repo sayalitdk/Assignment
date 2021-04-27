@@ -14,8 +14,16 @@ const CardHeaderComponent = (props) => {
         </label>
         <Printer size={30} />
         <FileEarmarkBreak size={30} />
-        <CardButtonComponent handleClick={reject} text="Reject" />
-        <CardButtonComponent handleClick={authorize} text="Authorize" />
+        <CardButtonComponent
+          handleClick={reject}
+          text="Reject"
+          btnClsName="reject"
+        />
+        <CardButtonComponent
+          handleClick={authorize}
+          text="Authorize"
+          btnClsName="authorize"
+        />
       </div>
       <span className="spanCls">
         {props.accountNo}, {props.accountName}

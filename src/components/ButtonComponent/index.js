@@ -1,12 +1,9 @@
 import { Button } from "react-bootstrap";
 import ButtonWrapper from "./ButtonStyle";
 
-const CardButtonComponent = ({ handleClick, text }) => (
+const CardButtonComponent = ({ handleClick, text, btnClsName }) => (
   <ButtonWrapper>
-    <Button
-      className={text.replaceAll(" ", "").toLowerCase()}
-      onClick={handleClick}
-    >
+    <Button className={btnClsName} onClick={handleClick}>
       {text}
     </Button>
   </ButtonWrapper>

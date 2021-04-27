@@ -5,11 +5,9 @@ import { action } from "@storybook/addon-actions";
 import Button from "../components/ButtonComponent";
 
 storiesOf("Button", module)
-  .add("Reject", () => <Button onClick={action("click")} text="Reject" />)
+  .add("Reject", () => (
+    <Button onClick={action("click")} text="Reject" btnClsName="reject" />
+  ))
   .add("Authorize", () => (
-    <Button
-      text="Authorize"
-      onClick={action("click")}
-      style={{ background: "transparent", border: "3px solid #fecd43" }}
-    />
+    <Button text="Authorize" onClick={action("click")} btnClsName="authorize" />
   ));

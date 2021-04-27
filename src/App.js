@@ -13,13 +13,19 @@ function App() {
       <nav>
         <ul>
           <li>
-            <Link to="/card">Card</Link>
+            <Link to="/card" data-testid="card-link">
+              Card
+            </Link>
           </li>
           <li>
-            <Link to="/timezone">Timezone</Link>
+            <Link to="/timezone" data-testid="timezone-link">
+              Timezone
+            </Link>
           </li>
           <li>
-            <Link to="/addNumbers">Add Numbers</Link>
+            <Link to="/addNumbers" data-testid="addNumbers-link">
+              Add Numbers
+            </Link>
           </li>
         </ul>
       </nav>
