@@ -31,16 +31,16 @@ it("should render the home page", () => {
 it("should navigate to the add numbers page", () => {
   const { container, getByTestId } = renderWithRouter(<App />);
   fireEvent.click(getByTestId("addNumbers-link"));
-  const inputD = getByTestId("num1");
-  expect(container).toContainElement(inputD);
-  expect(inputD).not.toBeNull();
-  expect(inputD).toHaveTextContent("");
+  const inputElement = getByTestId("num1");
+  expect(container).toContainElement(inputElement);
+  expect(inputElement).not.toBeNull();
+  expect(inputElement).toHaveTextContent("");
   expect(container.innerHTML).toMatch("Add Numbers");
 });
 
 it("should navigate to the card page", () => {
   const { container, getByTestId } = renderWithRouter(<App />);
   fireEvent.click(getByTestId("card-link"));
-  const table = getByTestId("cardCmp0");
-  expect(container).toContainElement(table);
+  const card = getByTestId("cardCmp0");
+  expect(container).toContainElement(card);
 });
