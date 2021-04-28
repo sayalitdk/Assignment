@@ -7,7 +7,7 @@ const CardHeaderComponent = (props) => {
   const reject = () => console.log("reject function called");
   const authorize = () => console.log("authorize function called");
   return (
-    <CardHeaderWrapper>
+    <CardHeaderWrapper data-testid={"cardHeaderCmp" + props.testid}>
       <div className="card-wrapper">
         <label>
           {props.reqName} {printAmount("GBP", props.amount)}
@@ -18,11 +18,13 @@ const CardHeaderComponent = (props) => {
           handleClick={reject}
           text="Reject"
           btnClsName="reject"
+          testid={"reject" + props.testid}
         />
         <CardButtonComponent
           handleClick={authorize}
           text="Authorize"
           btnClsName="authorize"
+          testid={"authorize" + props.testid}
         />
       </div>
       <span className="spanCls">

@@ -30,7 +30,11 @@ const AddNumbers = () => {
   return (
     <AddNumberWrapper>
       <div className="text-center">
-        {error && <div className="errorMsg">{error}</div>}
+        {error && (
+          <div className="errorMsg" data-testid="error">
+            {error}
+          </div>
+        )}
         <div className="numInputDiv" data-testid="inputDiv">
           <InputBox
             id="num1"
@@ -51,9 +55,9 @@ const AddNumbers = () => {
           handleClick={handleClick}
           text="Add"
           btnClsName="add"
-          data-testid="addBtn"
+          testid="addBtn"
         />
-        <div className="resultCls">
+        <div className="resultCls" data-testid="result">
           {result && "Sum of the number is: " + result}
         </div>
       </div>

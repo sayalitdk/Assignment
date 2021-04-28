@@ -27,9 +27,11 @@ const TimeZone = () => {
   }, [selectedTimeZone, getByZone]);
 
   return status === "loading" ? (
-    <div>Loading dropdown for you...</div>
+    <div data-testid="LoadingInDropdownTimeZone">
+      Loading dropdown for you...
+    </div>
   ) : error && error.message ? (
-    <div>
+    <div data-testid="ErrorInDropdownTimeZone">
       Something went wrong in getting dropdown details. The error message says:{" "}
       {error.message}
     </div>
@@ -39,6 +41,7 @@ const TimeZone = () => {
         <select
           value={selectedTimeZone}
           onChange={(e) => setSelectedTimeZone(e.currentTarget.value)}
+          data-testid="DropDownInTimeZone"
         >
           {timezoneRecords.map((item) => (
             <option key={item.zoneName} value={item.zoneName}>

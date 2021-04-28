@@ -20,6 +20,7 @@ const CardComponent = () => {
               reqName={data.reqName}
               accountNo={data.accountNo}
               accountName={data.accountName}
+              testid={index}
             />
           </Card.Header>
           <Card.Body>
@@ -30,11 +31,13 @@ const CardComponent = () => {
                 "Category",
                 "Request Status",
               ]}
+              testid={"tableCmp" + index}
             />
             <CardButtonComponent
               handleClick={linkDetailsClicked}
               text="Full details"
               btnClsName="fulldetails"
+              testid={"fulldetails" + index}
             />
           </Card.Body>
         </Card>
