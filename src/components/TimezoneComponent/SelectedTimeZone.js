@@ -30,10 +30,10 @@ const SelectedTimeZone = ({ selectedTimeZone }) => {
           Something went wrong in getting the timezone detail.
           <p>The error message says: {recordError.message}</p>
         </div>
-      ) : record && selectedTimeZone ? (
+      ) : selectedTimeZone ? (
         <>
           <div data-testid="TimerInSelTimeZone">
-            {record && record.formatted && formatTime(getTimerValue)}
+            {formatted && formatTime(formatted)}
           </div>
           <div>
             <p>Country Code: {countryCode}</p>
