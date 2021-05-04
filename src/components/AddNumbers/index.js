@@ -3,12 +3,20 @@ import CardButtonComponent from "../ButtonComponent";
 import AddNumberWrapper from "./AddNumberStyle";
 import InputBox from "../InputBox";
 
-function addNumber(num1, num2) {
-  addNumber = function () {
-    return null;
-  };
-  return num1 + num2;
+function addNumber() {
+  var sum;
+  function getSum(num1, num2) {
+    if (sum) {
+      return sum;
+    } else {
+      sum = num1 + num2;
+      return sum;
+    }
+  }
+  return getSum;
 }
+
+var addNumberOnce = addNumber();
 
 const AddNumbers = () => {
   const [result, setResult] = useState();
@@ -20,11 +28,8 @@ const AddNumbers = () => {
     if (!num1 || !num2) {
       setError("Please fill both required fields.");
     } else {
-      var numResult = addNumber(num1, num2);
       setError("");
-      if (numResult) {
-        setResult(numResult);
-      }
+      setResult(addNumberOnce(num1, num2));
     }
   };
   return (
