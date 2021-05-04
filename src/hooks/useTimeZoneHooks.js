@@ -28,7 +28,7 @@ const useTimeZoneRequest = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://api.timezonedb.com/v2.1/list-time-zone?key=XWSLLPX5RMIZ&format=json&zone=Europe`,
+          `http://api.timezonedb.com/v2.1/list-time-zone?key=XWSLLPX5RMIZ&format=json&zoneName=Europe`,
           {
             cancelToken: signal.current.token,
           }

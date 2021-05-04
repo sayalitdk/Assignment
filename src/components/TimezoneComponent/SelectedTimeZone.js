@@ -1,59 +1,48 @@
-import React, { useState, useEffect } from "react";
-import SingleRowTable from "../TableComponent";
+import React, { useState, useEffect, useMemo, useContext } from "react";
 import { formatTime } from "../../utils/format";
+import { DataContext } from "../../contexts/DataContext";
 
-const SelectedTimeZone = ({ record, recordError, recordStatus }) => {
-  const [seconds, setSeconds] = useState("");
-
+const SelectedTimeZone = ({ selectedTimeZone }) => {
+  const { record, recordError, getByZone } = useContext(DataContext);
+  const { countryCode, countryName, zoneName, formatted } = record;
   useEffect(() => {
     const interval = setInterval(() => {
-      if (seconds) {
-        setSeconds((seconds) => {
-          var temp = new Date(seconds).getTime() + 5000;
-          setSeconds(temp);
-        });
+      if (selectedTimeZone) {
+        getByZone(selectedTimeZone);
       }
     }, 5000);
     return () => clearInterval(interval);
-  }, [seconds]);
+  }, [selectedTimeZone]);
 
   useEffect(() => {
-    setSeconds(record.formatted);
-  }, [record]);
+    if (selectedTimeZone) {
+      getByZone(selectedTimeZone);
+    }
+  }, [selectedTimeZone]);
 
+  const getTimerValue = useMemo(() => {
+    return record.formatted;
+  }, [record.formatted]);
   return (
     <>
-      {recordStatus === "loading" ? (
-        <div data-testid="LoadingSelTimeZone">
-          Loading TimeZone detail and Timer for you....
-        </div>
-      ) : recordError ? (
+      {recordError ? (
         <div data-testid="ErrorInSelTimeZone">
           Something went wrong in getting the timezone detail.
           <p>The error message says: {recordError.message}</p>
         </div>
-      ) : (
+      ) : record && selectedTimeZone ? (
         <>
           <div data-testid="TimerInSelTimeZone">
-            {seconds && formatTime(seconds)}
+            {record && record.formatted && formatTime(getTimerValue)}
           </div>
-          <SingleRowTable
-            reqData={[
-              record.countryCode,
-              record.countryName,
-              record.zoneName,
-              record.formatted,
-            ]}
-            reqHeaderData={[
-              "Country Code",
-              "Country Name",
-              "Zone Name",
-              "Date/Time",
-            ]}
-            testid={"tableCmp"}
-          />
+          <div>
+            <p>Country Code: {countryCode}</p>
+            <p>Country Name: {countryName}</p>
+            <p>Zone Name: {zoneName}</p>
+            <p>Date/Time: {formatted}</p>
+          </div>
         </>
-      )}
+      ) : null}
     </>
   );
 };
