@@ -1,28 +1,74 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 const ButtonWrapper = styled.div`
-  margin: 0px 5px;
+  display: flex;
+  align-items: center;
+  min-height: 40px;
+  padding-left: 15px;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  font-weight: normal;
 
-  .reject {
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:active {
+    cursor: pointer;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+
+  .tertiaryLight {
     color: black;
-    background-color: white;
-    border-color: #463a3ab8;
+    background-color: transparent;
+    border: 1px solid black;
+    padding: 0px 20px 0px 20px;
+    height: 40px;
+    ${(props) =>
+      props.size === "true" &&
+      css`
+        height: 30px;
+        padding: 0px 10px 0px 10px;
+      `}
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.14);
+    }
+    &:active {
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+    &:disabled {
+      background-color: transparent;
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
   }
-  .authorize {
-    color: white;
-    background-color: #463a3ab8;
-    border-color: #463a3ab8;
-  }
-  .add {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .fulldetails {
-    margin-top: 70%;
+  .secondary {
+    color: #ffffff;
+    background-color: #4d6474;
     border: none;
-    background-color: white;
-    margin-top: 70%;
+    padding: 0px 20px 0px 20px;
+    height: 40px;
+    ${(props) =>
+      props.size === "true" &&
+      css`
+        height: 30px;
+        padding: 0px 10px 0px 10px;
+      `}
+    &:hover {
+      background-color: #3e505c;
+    }
+    &:active {
+      background-color: #31404a;
+    }
+    &:disabled {
+      color: #252525;
+      background-color: #fff;
+      border: 1px solid #252525;
+      opacity: 0.5;
+    }
   }
 `;
 
