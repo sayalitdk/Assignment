@@ -10,6 +10,11 @@ import {
   CardHeaderContainer,
 } from "./CardHeaderStyle";
 
+import {
+  SecondaryButton,
+  TertiaryButton,
+} from "../ButtonComponent/ButtonStyle";
+
 const CardHeaderComponent = (props) => {
   const reject = () => console.log("reject function called");
   const authorize = () => console.log("authorize function called");
@@ -26,26 +31,28 @@ const CardHeaderComponent = (props) => {
       <ButtonWrapper>
         <IconContainer>
           <span>
-            <i class="fa fa-print fa-lg" aria-hidden="true"></i>
+            <i className="fa fa-print fa-lg" aria-hidden="true"></i>
           </span>
           <span>
-            <i class="fa fa-file fa-lg" aria-hidden="true"></i>
+            <i className="fa fa-file fa-lg" aria-hidden="true"></i>
           </span>
         </IconContainer>
-        <CardButtonComponent
-          handleClick={reject}
-          text="Reject"
-          btnClsName="tertiaryLight"
-          testid={"reject" + props.testid}
-          size={"true"}
-        />
-        <CardButtonComponent
-          handleClick={authorize}
-          text="Authorise"
-          btnClsName="secondary"
-          testid={"authorise" + props.testid}
-          size={"false"}
-        />
+        <TertiaryButton>
+          <CardButtonComponent
+            handleClick={reject}
+            text="Reject"
+            testid={"reject" + props.testid}
+            size={"true"}
+          />
+        </TertiaryButton>
+        <SecondaryButton>
+          <CardButtonComponent
+            handleClick={authorize}
+            text="Authorise"
+            testid={"authorise" + props.testid}
+            size={"false"}
+          />
+        </SecondaryButton>
       </ButtonWrapper>
     </CardHeaderContainer>
   );

@@ -6,16 +6,30 @@ const SingleRowTable = (props) => {
       <table data-testid={props.testid}>
         <thead>
           <tr>
-            {props.reqHeaderData.map((headerData, index) => {
-              return <th key={index}>{headerData}</th>;
+            {Object.keys(props.data).map((headerData, index) => {
+              return (
+                <th key={index}>{headerData.replace("req", "Request ")}</th>
+              );
             })}
           </tr>
         </thead>
         <tbody>
           <tr>
-            {props.reqData.map((rowData, index) => {
+            {Object.entries(props.data).map(([attributeCode, items]) => {
               return (
-                <td key={index}>{rowData ? rowData : "Data Not Found"}</td>
+                <td key={attributeCode}>
+                  {items
+                    ? attributeCode == "reqCategory"
+                      ? [
+                          <i
+                            class="fa fa-exclamation-circle"
+                            aria-hidden="true"
+                          />,
+                          items,
+                        ]
+                      : items
+                    : "Data Not Found"}
+                </td>
               );
             })}
           </tr>

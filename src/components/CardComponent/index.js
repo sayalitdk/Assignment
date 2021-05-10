@@ -8,6 +8,8 @@ import {
 import CardHeaderComponent from "../CardHeaderComponent";
 import SingleRowTable from "../TableComponent";
 import CardButtonComponent from "../ButtonComponent";
+import pick from "lodash/pick";
+import CardFooterSection from "../CardFooterSection/CardFooterSection";
 
 const CardComponent = () => {
   const cardData = useContext(DataContext);
@@ -27,6 +29,7 @@ const CardComponent = () => {
         </div>
         <CardBodyContainer>
           <SingleRowTable
+            data={pick(data, ["reqReference", "reqCategory", "reqStatus"])}
             reqData={[data.reqReference, data.reqCategory, data.reqStatus]}
             reqHeaderData={["Request References", "Category", "Request Status"]}
             testid={"tableCmp" + index}
@@ -37,6 +40,10 @@ const CardComponent = () => {
             </a>
           </FullDetailContainer>
         </CardBodyContainer>
+        <CardFooterSection
+          privateNote={data.privateNote}
+          attachments={data.attachments}
+        />
       </CardWrapper>
     );
   });

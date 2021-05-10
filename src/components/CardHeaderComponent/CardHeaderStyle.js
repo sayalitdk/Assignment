@@ -23,7 +23,8 @@ export const SubTitle = styled.div`
 export const ButtonWrapper = styled.div`
   display: flex;
   align-items: center;
-  width: 40%;
+  width: 45%;
+  justify-content: space-around;
 `;
 
 export const IconContainer = styled.div`

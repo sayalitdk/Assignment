@@ -9,6 +9,13 @@ const CardData = [
     reqReference: "SET29383ABCH",
     reqCategory: "Payment",
     reqStatus: "Pending authorisation",
+    privateNote: {
+      hasPrivateNote: true,
+      privateNoteText: "This request can only be seen by you.",
+    },
+    attachments: {
+      hasAttachment: false,
+    },
   },
   {
     id: "123490",
@@ -20,6 +27,13 @@ const CardData = [
     reqReference: "SET78956ABDE",
     reqCategory: "Payment",
     reqStatus: "In Progress",
+    privateNote: {
+      hasPrivateNote: false,
+    },
+    attachments: {
+      hasAttachment: true,
+      attachmentURL: "/",
+    },
   },
   {
     id: "123491",
@@ -31,6 +45,31 @@ const CardData = [
     reqReference: "SET14792HJER",
     reqCategory: "Payment",
     reqStatus: "Completed",
+    privateNote: {
+      hasPrivateNote: false,
+    },
+    attachments: {
+      hasAttachment: false,
+    },
+  },
+  {
+    id: "123492",
+    imageSrc: "speaker-component-1535",
+    amount: 4000,
+    accountNo: "3254353498609789",
+    accountName: "LMN Company",
+    reqName: "Complete Payment",
+    reqReference: "SET78956MNBV",
+    reqCategory: "Payment",
+    reqStatus: "In Progress",
+    privateNote: {
+      hasPrivateNote: true,
+      privateNoteText: "This request can only be seen by you.",
+    },
+    attachments: {
+      hasAttachment: true,
+      attachmentURL: "/",
+    },
   },
 ];
 

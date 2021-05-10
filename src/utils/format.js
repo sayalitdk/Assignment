@@ -1,7 +1,7 @@
-export const printAmount = (currency, amount, sdefault = null) => {
+export const printAmount = (currency, amount, sumdefault = null) => {
   let printedAmountString;
   if (amount === undefined || amount === null) {
-    printedAmountString = sdefault;
+    printedAmountString = sumdefault;
   } else {
     let hasNegativeSign = false;
     if (amount < 0) {
@@ -10,6 +10,7 @@ export const printAmount = (currency, amount, sdefault = null) => {
     printedAmountString =
       (hasNegativeSign ? "-" : "") +
       currency +
+      " " +
       amount.toLocaleString(navigator.language, {
         maximumFractionDigits: 2,
         minimumFractionDigits: 2,
