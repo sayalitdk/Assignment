@@ -1,5 +1,5 @@
 import { useState } from "react";
-import CardButtonComponent from "../ButtonComponent";
+import AddButtonComponent from "../ButtonComponent";
 import AddNumberWrapper from "./AddNumberStyle";
 import InputBox from "../InputBox";
 
@@ -56,7 +56,7 @@ const AddNumbers = () => {
             handleClick={(value) => setNum2(value)}
           />
         </div>
-        <CardButtonComponent
+        <AddButtonComponent
           handleClick={handleClick}
           text="Add"
           btnClsName="add"

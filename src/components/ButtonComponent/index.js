@@ -1,13 +1,18 @@
-const CardButtonComponent = ({
+const AddButtonComponent = ({
   handleClick,
   text,
   btnClsName,
   testid,
-  size,
+  disableBtn,
 }) => (
-  <button className={btnClsName} onClick={handleClick} data-testid={testid}>
+  <button
+    className={btnClsName}
+    onClick={handleClick}
+    data-testid={testid}
+    disabled={disableBtn}
+  >
     {text}
   </button>
 );
 
-export default CardButtonComponent;
+export default AddButtonComponent;

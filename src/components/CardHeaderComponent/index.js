@@ -1,4 +1,3 @@
-import CardButtonComponent from "../ButtonComponent";
 import { printAmount } from "../../utils/format";
 import "font-awesome/css/font-awesome.min.css";
 import {
@@ -37,21 +36,14 @@ const CardHeaderComponent = (props) => {
             <i className="fa fa-file fa-lg" aria-hidden="true"></i>
           </span>
         </IconContainer>
-        <TertiaryButton>
-          <CardButtonComponent
-            handleClick={reject}
-            text="Reject"
-            testid={"reject" + props.testid}
-            size={"true"}
-          />
+        <TertiaryButton handleClick={reject} testid={"reject" + props.testid}>
+          Reject
         </TertiaryButton>
-        <SecondaryButton>
-          <CardButtonComponent
-            handleClick={authorize}
-            text="Authorise"
-            testid={"authorise" + props.testid}
-            size={"false"}
-          />
+        <SecondaryButton
+          handleClick={authorize}
+          testid={"authorise" + props.testid}
+        >
+          Authorise
         </SecondaryButton>
       </ButtonWrapper>
     </CardHeaderContainer>

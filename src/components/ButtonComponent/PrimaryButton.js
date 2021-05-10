@@ -1,10 +1,10 @@
 import styled, { css } from "styled-components";
 import ButtonCmp from "./ButtonCmp";
 
-const SecondaryButton = styled.button`
+const PrimaryButton = styled.button`
   ${ButtonCmp}
-  color: #ffffff;
-  background-color: #4d6474;
+  color: #FFFFFF;
+  background-color: #db0011;
   border: none;
   padding: 0px 20px 0px 20px;
   height: 40px;
@@ -15,10 +15,10 @@ const SecondaryButton = styled.button`
       padding: 0px 10px 0px 10px;
     `}
   &:hover {
-    background-color: #3e505c;
+    background-color: #a4000d;
   }
   &:active {
-    background-color: #31404a;
+    background-color: #83000a;
   }
   &:disabled {
     color: #252525;
@@ -28,4 +28,4 @@ const SecondaryButton = styled.button`
   }
 `;
 
-export default SecondaryButton;
+export default PrimaryButton;

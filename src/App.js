@@ -4,6 +4,7 @@ import Card from "./components/CardComponent/index";
 import Timezone from "./components/TimezoneComponent";
 import CardData from "./contexts/CardData";
 import AddNumbers from "./components/AddNumbers/index";
+import ButtonSection from "./components/ButtonSection/index";
 import { DataContext } from "./contexts/DataContext";
 import { BrowserRouter, Link, Route, Switch } from "react-router-dom";
 
@@ -15,6 +16,11 @@ function App() {
           <li>
             <Link to="/card" data-testid="card-link">
               Card
+            </Link>
+          </li>
+          <li>
+            <Link to="/buttons" data-testid="buttons-link">
+              Buttons
             </Link>
           </li>
           <li>
@@ -34,6 +40,9 @@ function App() {
           <DataContext.Provider value={CardData}>
             <Card />
           </DataContext.Provider>
+        </Route>
+        <Route path="/buttons">
+          <ButtonSection />
         </Route>
         <Route path="/timezone">
           <Timezone />
