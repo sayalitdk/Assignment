@@ -53,9 +53,8 @@ const useTimeZoneRequest = () => {
     fetchData();
     return () => {
       console.log("unmount and cancel running axios request");
-      signal.current.cancel();
     };
-  }, [signal]);
+  }, []);
 
   const propsLocal = {
     records,
