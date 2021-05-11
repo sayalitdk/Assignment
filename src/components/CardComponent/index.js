@@ -7,14 +7,11 @@ import {
 } from "./CardStyle";
 import CardHeaderComponent from "../CardHeaderComponent";
 import SingleRowTable from "../TableComponent";
-import CardButtonComponent from "../ButtonComponent";
 import pick from "lodash/pick";
 import CardFooterSection from "../CardFooterSection/CardFooterSection";
 
 const CardComponent = () => {
   const cardData = useContext(DataContext);
-  const linkDetailsClicked = () =>
-    console.log("linkDetailsClicked function called");
   return cardData.map((data, index) => {
     return (
       <CardWrapper key={index}>

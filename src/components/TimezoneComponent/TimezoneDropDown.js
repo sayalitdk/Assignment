@@ -8,7 +8,7 @@ const TimezoneDropDown = (props) => {
     if (timezoneRecords && timezoneRecords.length > 0) {
       props.onChangeHandler(timezoneRecords[0].zoneName);
     }
-  }, [timezoneRecords]);
+  }, [timezoneRecords, props]);
   const memoizedTimeZoneRecords = useMemo(() => {
     return timezoneRecords;
   }, [timezoneRecords]);

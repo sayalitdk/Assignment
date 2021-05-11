@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo, useContext } from "react";
+import React, { useEffect, useContext } from "react";
 import { formatTime } from "../../utils/format";
 import { DataContext } from "../../contexts/DataContext";
 
@@ -12,17 +12,14 @@ const SelectedTimeZone = ({ selectedTimeZone }) => {
       }
     }, 5000);
     return () => clearInterval(interval);
-  }, [selectedTimeZone]);
+  }, [selectedTimeZone, getByZone]);
 
   useEffect(() => {
     if (selectedTimeZone) {
       getByZone(selectedTimeZone);
     }
-  }, [selectedTimeZone]);
+  }, [selectedTimeZone, getByZone]);
 
-  const getTimerValue = useMemo(() => {
-    return record.formatted;
-  }, [record.formatted]);
   return (
     <>
       {recordError ? (

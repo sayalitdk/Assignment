@@ -19,7 +19,7 @@ const SingleRowTable = (props) => {
               return (
                 <td key={attributeCode}>
                   {items
-                    ? attributeCode == "reqCategory"
+                    ? attributeCode === "reqCategory"
                       ? [
                           <i
                             class="fa fa-exclamation-circle"

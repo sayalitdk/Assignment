@@ -36,6 +36,7 @@ const useTimeZoneRequest = () => {
         dispatch({
           type: GET_ALL_SUCCESS,
           records: response.data.zones,
+          recordError: null,
         });
       } catch (e) {
         console.log("Loading data error", e);
@@ -54,7 +55,7 @@ const useTimeZoneRequest = () => {
       console.log("unmount and cancel running axios request");
       signal.current.cancel();
     };
-  }, []);
+  }, [signal]);
 
   const propsLocal = {
     records,
